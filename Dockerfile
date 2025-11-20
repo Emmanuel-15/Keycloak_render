@@ -1,6 +1,6 @@
 FROM quay.io/keycloak/keycloak:latest
 
-# Use KC_JAVA_OPTS instead of JAVA_OPTS
+# Memory limits
 ENV KC_JAVA_OPTS="-Xms256m -Xmx512m -XX:MaxMetaspaceSize=256m"
 
 # Your existing env vars...
@@ -15,8 +15,10 @@ ENV KC_DB_PASSWORD=rooT@3225
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_PROXY=edge
 ENV KC_HTTP_ENABLED=true
+ENV KC_HTTP_PORT=10000
 
-EXPOSE 8080
+# Match the port
+EXPOSE 10000
 
 RUN /opt/keycloak/bin/kc.sh build --db=mysql
 CMD ["start-dev"]
