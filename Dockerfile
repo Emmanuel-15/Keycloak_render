@@ -11,5 +11,5 @@ ENV KC_DB_PASSWORD=rooT@3225
 # Expose port
 EXPOSE 8080
 
-# Start command (use full path to be safe)
-CMD ["/opt/keycloak/bin/kc.sh", "start-dev"]
+# Start command (FIXED: use shell form)
+CMD /opt/keycloak/bin/kc.sh start-dev
