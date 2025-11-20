@@ -13,4 +13,5 @@ ENV KC_PROXY=edge
 
 EXPOSE 8080
 
-CMD ["start-dev"]
+CMD build --db=mysql && start-dev
+
