@@ -1,5 +1,8 @@
 FROM quay.io/keycloak/keycloak:latest
 
+# Memory limits
+ENV JAVA_OPTS="-Xms256m -Xmx512m -XX:MaxMetaspaceSize=256m"
+
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 ENV KC_DB=mysql
