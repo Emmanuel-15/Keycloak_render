@@ -13,5 +13,5 @@ ENV KC_PROXY=edge
 
 EXPOSE 8080
 
-CMD build --db=mysql && start-dev
-
+RUN /opt/keycloak/bin/kc.sh build --db=mysql
+CMD ["start-dev"]
