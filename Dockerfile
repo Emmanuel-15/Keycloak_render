@@ -1,15 +1,11 @@
-FROM quay.io/keycloak/keycloak:latest
+FROM bitnami/keycloak:latest
 
-# Environment variables
-ENV KEYCLOAK_ADMIN=admin
+ENV KEYCLOAK_ADMIN_USER=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
-ENV KC_DB=mysql
-ENV KC_DB_URL=jdbc:mysql://64.227.128.119:3306/keycloak?useSSL=true&allowPublicKeyRetrieval=true
-ENV KC_DB_USERNAME=hrms_test
-ENV KC_DB_PASSWORD=rooT@3225
+ENV KEYCLOAK_DATABASE_HOST=64.227.128.119
+ENV KEYCLOAK_DATABASE_PORT=3306
+ENV KEYCLOAK_DATABASE_NAME=keycloak
+ENV KEYCLOAK_DATABASE_USER=hrms_test
+ENV KEYCLOAK_DATABASE_PASSWORD=rooT@3225
 
-# Expose port
 EXPOSE 8080
-
-# Start command (FIXED: proper exec form with shell)
-CMD ["/bin/sh", "-c", "/opt/keycloak/bin/kc.sh start-dev"]
