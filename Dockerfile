@@ -12,6 +12,3 @@ ENV KC_HOSTNAME_STRICT=false
 ENV KC_PROXY=edge
 
 EXPOSE 8080
-
-# SIMPLE - just the command
-CMD start-dev
